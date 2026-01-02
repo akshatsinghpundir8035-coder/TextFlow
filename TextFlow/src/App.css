@@ -1,0 +1,339 @@
+/* =========================================
+   1. Global Variables & Reset
+   ========================================= */
+:root {
+  --primary-blue: #2563eb;
+  --secondary-cyan: #06b6d4;
+  --gradient-main: linear-gradient(90deg, #2563eb 0%, #06b6d4 100%);
+  --bg-body: #f8faff;
+  --text-main: #1e293b;
+  --text-muted: #64748b;
+  --white: #ffffff;
+  --border: #eef2f6;
+  --sidebar-width: 260px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', -apple-system, sans-serif;
+}
+
+body {
+  background-color: var(--bg-body);
+  color: var(--text-main);
+  overflow-x: hidden;
+}
+
+/* =========================================
+   2. Login Page Styles
+   ========================================= */
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.header-section {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.logo-container {
+  width: 52px;
+  height: 52px;
+  background: var(--gradient-main);
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  margin: 0 auto 15px;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+}
+
+.login-card {
+  background: var(--white);
+  width: 100%;
+  max-width: 420px;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+.form-group {
+  margin-bottom: 22px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-wrapper input {
+  width: 100%;
+  padding: 14px 52px; /* Sufficient space for left/right icons */
+  font-size: 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  background-color: #f9fafb;
+  transition: all 0.2s;
+}
+
+.input-wrapper input:focus {
+  outline: none;
+  border-color: var(--primary-blue);
+  background-color: var(--white);
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+}
+
+.input-icon {
+  position: absolute;
+  color: #94a3b8;
+}
+
+.input-icon.left {
+  left: 18px;
+}
+
+.input-icon.right-clickable {
+  right: 18px;
+  cursor: pointer;
+  z-index: 5;
+}
+
+.btn-primary {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  background: var(--gradient-main);
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.link-forgot {
+  display: block;
+  text-align: right;
+  font-size: 0.85rem;
+  color: var(--primary-blue);
+  text-decoration: none;
+  margin: -10px 0 20px 0;
+}
+
+/* =========================================
+   3. Dashboard Styles
+   ========================================= */
+.dashboard-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+}
+
+/* Sidebar */
+.sidebar {
+  width: var(--sidebar-width);
+  background: var(--white);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  padding: 24px 16px;
+}
+
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 700;
+  font-size: 1.25rem;
+  margin-bottom: 35px;
+}
+
+.logo-icon-small {
+  background: var(--gradient-main);
+  color: white;
+  padding: 8px;
+  border-radius: 8px;
+  display: flex;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  color: var(--text-muted);
+  border-radius: 12px;
+  cursor: pointer;
+  margin-bottom: 5px;
+  transition: 0.2s;
+}
+
+.menu-item:hover {
+  background: #f1f5f9;
+  color: var(--primary-blue);
+}
+
+.menu-item.active {
+  background: #eff6ff;
+  color: var(--primary-blue);
+  font-weight: 600;
+}
+
+.logout-btn {
+  margin-top: auto;
+  color: #ef4444;
+}
+
+.help-card {
+  margin-top: 20px;
+  background: var(--gradient-main);
+  padding: 16px;
+  border-radius: 16px;
+  color: white;
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 30px;
+}
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: white;
+  padding: 8px 16px;
+  border-radius: 50px;
+  border: 1px solid var(--border);
+}
+
+.user-avatar {
+  width: 35px;
+  height: 35px;
+  background: #0ea5e9;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.username { font-size: 0.85rem; font-weight: 600; }
+.user-email { font-size: 0.75rem; color: var(--text-muted); }
+
+/* Processor Elements */
+.glass-card {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 25px;
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+}
+
+.input-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+textarea {
+  width: 100%;
+  min-height: 220px;
+  border: 1px solid #e2e8f0;
+  border-radius: 15px;
+  padding: 20px;
+  font-size: 1rem;
+  background: #fcfdfe;
+  resize: vertical;
+}
+
+.action-center {
+  display: flex;
+  justify-content: center;
+  margin: 30px 0;
+}
+
+.btn-run {
+  background: var(--gradient-main);
+  color: white;
+  padding: 15px 35px;
+  border: none;
+  border-radius: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.2);
+}
+
+.empty-state {
+  text-align: center;
+  padding: 50px;
+  color: var(--text-muted);
+}
+
+.state-icon {
+  font-size: 3rem;
+  color: #bfdbfe;
+  margin-bottom: 15px;
+}
+
+/* =========================================
+   4. Utilities & Dividers
+   ========================================= */
+.divider {
+  display: flex;
+  align-items: center;
+  margin: 25px 0;
+  color: #cbd5e1;
+}
+
+.divider::before, .divider::after {
+  content: ""; flex: 1; border-bottom: 1px solid #e2e8f0;
+}
+
+.divider span { padding: 0 15px; font-size: 0.85rem; }
+
+.footer-action { text-align: center; font-size: 0.9rem; }
+.footer-action a { color: var(--primary-blue); text-decoration: none; font-weight: 600; }
+
+.legal-text {
+  margin-top: 30px;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-align: center;
+}
